@@ -7,14 +7,18 @@ This is a simple project to save some time using sonarqube and sonarscanner on d
 ### 1. Setup your environment with .env :
 
 **SONAR_USER**={*YOUR_SONAR_USER*}
+
 **SONAR_PASSWORD**={*YOUR_SONAR_PASSWORD*}
+
 **SOURCE_DIRECTORY**={*YOUR_SOURCE_DIRECTORY*} 
+
 > ⚠️ For windows users ⚠️
-Adapt your path to Linux
-Your path must only use "/"
+> Adapt your path to Linux,
+your path must only use "/"
 ~~usr\test~~ ➡️ usr/test
 
 **SONAR_TOKEN**={*YOUR_SONAR_TOKEN*}
+
 **PROJECT_KEY**={*PROJECT_NAME*}
 
 In your first launch you will not be able to setup **SONAR_USER**, **SONAR_PASSWORD** and **SONAR_TOKEN**. Thoses come later.
@@ -33,12 +37,15 @@ You will see this :
 ![Login image](/images/login.png "Login image")
 
 The defaults credentials are :
+
 **Login**: *admin*
+
 **Password**: *admin*
 
 In the next page sonarqube will ask you to choose a new password, preceed and you are now able update your .env as follow :
 
 **SONAR_USER**={*YOUR_SONAR_USER*}
+
 **SONAR_PASSWORD**={*YOUR_SONAR_PASSWORD*}
 
 ---
