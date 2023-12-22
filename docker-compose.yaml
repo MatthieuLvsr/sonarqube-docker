@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  sonarqube:
+    image: sonarqube:latest
+    ports:
+      - "9000:9000"
+    networks: 
+      - sonarnet
+  sonarscanner:
+    image: newtmitch/sonar-scanner:latest
+    networks: 
+      - sonarnet  
+    environment:
+      - SONAR_TOKEN=${SONAR_TOKEN}
+    volumes:
+      - "${SOURCE_DIRECTORY}:/usr/src"
+      - "./wait.sh:/wait.sh"
+    command: ["bash", "-c", "sh /wait.sh sonarqube:9000 ${SONAR_USER} ${SONAR_PASSWORD} && sonar-scanner -Dsonar.projectKey=${PROJECT_KEY} -Dsonar.projectBaseDir=./src"]
+networks:
+  sonarnet:
